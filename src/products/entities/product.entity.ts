@@ -3,15 +3,17 @@ import { BeforeInsert, BeforeUpdate, Column, Entity, PrimaryGeneratedColumn } fr
 @Entity()
 export class Product {
 
-    @PrimaryGeneratedColumn('increment')
+    @PrimaryGeneratedColumn()
     id: number;
 
-    @Column('varchar', {
+    @Column({
+        type: 'varchar',
         unique: true,
     })
     title: string;
 
-    @Column('float',{
+    @Column({
+        type: 'float',
         default: 0
     })
     price: number;
@@ -22,24 +24,32 @@ export class Product {
     })
     description: string;
 
-    @Column('varchar', {
+    @Column({
+        type: 'varchar',
         unique: true
     })
     slug: string;
 
-    @Column('int', {
+    @Column({
+        type: 'int',
         default: 0
     })
     stock: number;
 
-    @Column('varchar')
+    @Column({
+        type: 'varchar'
+    })
     sizes: string;
 
-    @Column('varchar')
+    @Column({
+        type: 'varchar'
+    })
     gender: string;
 
 
-    @Column('varchar')
+    @Column({
+        type: 'varchar'
+    })
     tags: string;
 
     // images

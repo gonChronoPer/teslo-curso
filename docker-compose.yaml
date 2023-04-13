@@ -5,7 +5,7 @@ services:
   mysql:
     image: mysql:8.0.26
     container_name: mysql
-    restart: on error
+    restart: always
     environment:
       MYSQL_DATABASE: TesloDB
       MYSQL_ROOT_PASSWORD: mysecretpassword
